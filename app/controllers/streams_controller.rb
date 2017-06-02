@@ -3,8 +3,6 @@ require 'json'
 require 'rest-client'
 
 class StreamsController < ApplicationController
-  @@wsc_api_key = "cVTeRj8SHpZ2rMmik9lkSVcgDf4xar8myyrr2zX5B11CMiP0brfQK7yBh78Z3423"
-  @@wsc_access_key = "ha5zig1TQX2VSlWrFUzFBZLGOT6tb04GOHZiuYuHkIeqzeBCkYW5HOc75VVG325e"
   def new
 
   end
