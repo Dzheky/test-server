@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <h1>New Stream</h1>
+        <%= form_for :streams, url: streams_path do |f| %>
+          <div class="form-group">
+            <%= f.label :stream_name, :for => 'stream_name' %><br>
+            <%= f.text_field :stream_name, :value => 'Awesome Stream!', :id => 'stream_name', :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :transcoder_type %><br>
+            <%= f.select :transcoder_type, [['Transcoded','transcoded'],['Passthrough','passthrough']], {},  :class => 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :billing_mode %><br>
+            <%= f.select :billing_mode, [['Pay_as_you_go','pay_as_you_go']], {},  :class => 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :broadcast_location %><br>
+            <%=
+              f.select :broadcast_location,
+              [
+                ['asia_pacific_australia','asia_pacific_australia'],
+                ['asia_pacific_india','asia_pacific_india'],
+                ['asia_pacific_japan','asia_pacific_japan'],
+                ['asia_pacific_s_korea','asia_pacific_s_korea'],
+                ['asia_pacific_singapore','asia_pacific_singapore'],
+                ['asia_pacific_taiwan','asia_pacific_taiwan'],
+                ['eu_belgium','eu_belgium'],
+                ['eu_germany','eu_germany'],
+                ['eu_ireland','eu_ireland'],
+                ['south_america_brazil','south_america_brazil'],
+                ['us_central_iowa','us_central_iowa'],
+                ['us_east_s_carolina','us_east_s_carolina'],
+                ['us_east_virginia','us_east_virginia'],
+                ['us_west_california','us_west_california'],
+                ['us_west_oregon','us_west_oregon']
+              ], {},  :class => 'form-control'
+            %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :encoder %><br>
+            <%= f.select :encoder, [['other_rtmp','other_rtmp'], ['other_rtsp','other_rtsp']], {}, :class => 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :delivery_method %><br>
+            <%= f.select :delivery_method, [['push','push']], {},  :class => 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :aspect_ratio_width %><br>
+            <%= f.text_field :aspect_ratio_width, :value => '1920', :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :aspect_ratio_height %><br>
+            <%= f.text_field :aspect_ratio_height, :value => '1080', :class => 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit 'Set Stream', :class => 'btn btn-primary'  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <h1>New Stream</h1>
+        <div class='primary_server'>
+            <h4>Primary Server:</h4>
+            <code><%= @stream[:primary_server] %></code>
+        </div>
+        <div class='host_port'>
+          <h4>Host Port:</h4>
+          <code><%= @stream[:host_port] %></code>
+        </div>
+        <div class='stream_name'>
+          <h4>Stream name:</h4>
+          <code><%= @stream[:stream_name] %></code>
+        </div>
+        <div class='stream_url'>
+          <h4>Stream hosted page:</h4>
+          <% if @stream[:hosted_page] == 'in_progress' %>
+            <p>Hosted page is being created, check back later.</p>
+            <%= button_to "Check if ready", streams_path, method: :get, params: { id: @stream[:id] }, :class => 'btn btn-primary' %>
+          <% else %>
+            <code><%= @stream[:hosted_page] %></code>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
